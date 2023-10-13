@@ -1,16 +1,38 @@
 import { useState } from "react";
-import { Navigation, Main } from "./components";
+import { Navigation, Main, SearchFeed } from "./components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   const [selectedCatergory, setSelectedCatergory] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [feed, setFeed] = useState([]);
   return (
-    <>
+    <BrowserRouter>
       <Navigation
         selectedCatergory={selectedCatergory}
         setSelectedCatergory={setSelectedCatergory}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
       />
-      <Main selectedCatergory={selectedCatergory} />
-    </>
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <Main
+              selectedCatergory={selectedCatergory}
+              feed={feed}
+              setFeed={setFeed}
+            />
+          }
+        ></Route>
+        <Route
+          path="/search/:searchTerm"
+          element={<SearchFeed feed={feed} setFeed={setFeed} />}
+        ></Route>
+        <Route path="/video/:videoID"></Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

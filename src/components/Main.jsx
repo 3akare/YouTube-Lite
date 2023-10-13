@@ -2,8 +2,7 @@ import fetchData from "../fetchData";
 import React, { useEffect, useState, Suspense } from "react";
 const VideoCard = React.lazy(() => import("./VideoCard"));
 
-const Main = ({ selectedCatergory }) => {
-  const [feed, setFeed] = useState([]);
+const Main = ({ selectedCatergory, feed, setFeed }) => {
   useEffect(() => {
     setTimeout(() => {
       fetchData(
