@@ -1,5 +1,5 @@
 export const categories = [
-  { title: "All", img: "" },
+  { title: "New", img: "" },
   { title: "Music", img: "" },
   { title: "History", img: "" },
   { title: "Cook Studio", img: "" },

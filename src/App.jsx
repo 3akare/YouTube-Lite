@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigation, Main, SearchFeed } from "./components";
+import { Navigation, Main, SearchFeed, Watch } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
           path="/search/:searchTerm"
           element={<SearchFeed feed={feed} setFeed={setFeed} />}
         ></Route>
-        <Route path="/video/:videoID"></Route>
+        <Route path="/watch/:watchID" element={<Watch />}></Route>
       </Routes>
     </BrowserRouter>
   );
