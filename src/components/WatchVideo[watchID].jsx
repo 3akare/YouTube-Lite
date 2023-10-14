@@ -7,7 +7,7 @@ const Watch = () => {
   console.log(watchID);
   return (
     <>
-      <ReactPlayer url={`https://youtube.com/watch?v=${watchID}`} className="w-96 h-96"/>
+      <ReactPlayer url={`https://youtube.com/watch?v=${watchID}`} className="w-96 h-96" controls/>
     </>
   );
 };
